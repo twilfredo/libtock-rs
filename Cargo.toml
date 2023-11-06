@@ -36,6 +36,10 @@ libtock_sound_pressure = {path = "apis/sound_pressure"}
 libtock_temperature = { path = "apis/temperature" }
 libmctp = { path = "tools/libmctp" }
 
+emballoc = { version = "0.2", features = ["portable_atomic"] }
+
+SPDM-Utils = { git = "https://github.com/westerndigitalcorporation/spdm-utils.git", default-features = false, features = ["no_std"] }
+
 [build-dependencies]
 libtock_build_scripts = { path = "build_scripts"}
 
