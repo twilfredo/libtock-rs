@@ -1,3 +1,6 @@
 [submodule "tock"]
 	path = tock
 	url = https://github.com/tock/tock.git
+[submodule "tools/libmctp"]
+	path = tools/libmctp
+	url = org-8161321@github.com:westerndigitalcorporation/libmctp.git
