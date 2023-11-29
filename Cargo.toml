@@ -34,6 +34,7 @@ libtock_proximity = { path = "apis/proximity" }
 libtock_runtime = { path = "runtime" }
 libtock_sound_pressure = {path = "apis/sound_pressure"}
 libtock_temperature = { path = "apis/temperature" }
+libmctp = { path = "tools/libmctp" }
 
 [build-dependencies]
 libtock_build_scripts = { path = "build_scripts"}
@@ -72,6 +73,7 @@ members = [
     "runtime",
     "syscalls_tests",
     "tools/print_sizes",
+    "tools/libmctp",
     "ufmt",
     "unittest",
 ]
