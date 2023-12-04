@@ -1,6 +1,13 @@
 //! Utility functions for implementing build.rs files for libtock-rs apps.
 
 /// List of known `LIBTOCK_PLATFORM` values.
+///
+/// Note: The nrf52840 config is for an app that intends to use a large chunk of RAM (heap etc...).
+/// The RAM start address is changed to match what the mpu region start is calculated
+/// to be by the kernel. For example: with a global allocator mapping a heap size >= 64K,
+/// app_memory_start_offset = 0x8000 for the nrf52840. If the fixed address does not match
+/// the actual address when the kernel is loading the app, it will be ignored due to mismatch.
+/// See: https://github.com/tock/tock/blob/3f2d0c5370568b701e69e344f08688d8e5dfc620/kernel/src/process_standard.rs#L1650
 #[rustfmt::skip]
 const PLATFORMS: &[(&str, &str, &str, &str, &str)] = &[
     // Name               | Flash start | Flash len  | RAM start   | RAM length
@@ -15,7 +22,7 @@ const PLATFORMS: &[(&str, &str, &str, &str, &str)] = &[
     ("msp432"             , "0x00020000", "0x0020000", "0x20004000", "0x02000"),
     ("nano_rp2040_connect", "0x10020000", "256K"     , "0x20004000", "248K"   ),
     ("nrf52"              , "0x00030000", "0x0060000", "0x20004000", "62K"    ),
-    ("nrf52840"           , "0x00040000", "768K"     , "0x20008000", "56K"    ),
+    ("nrf52840"           , "0x00040000", "768K"     , "0x20010000", "128K"    ),
     ("nucleo_f429zi"      , "0x08040000", "255K"     , "0x20004000", "112K"   ),
     ("nucleo_f446re"      , "0x08040000", "255K"     , "0x20004000", "176K"   ),
     ("opentitan"          , "0x20030000", "32M"      , "0x10005000", "512K"   ),

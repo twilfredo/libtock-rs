@@ -8,3 +8,6 @@ name = "libtock_build_scripts"
 repository = "https://www.github.com/tock/libtock-rs"
 rust-version.workspace = true
 version = "0.1.0"
+
+[build]
+rustflags = "--cfg heapon"

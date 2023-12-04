@@ -19,11 +19,12 @@ fn main() {
     println!("cargo:rustc-link-arg=-lspdm_secured_message_lib");
     println!("cargo:rustc-link-arg=-lspdm_crypt_lib");
     println!("cargo:rustc-link-arg=-lspdm_crypt_ext_lib");
-    println!("cargo:rustc-link-arg=-lspdm_transport_pcidoe_lib");
 
-    println!("cargo:rustc-link-arg=/scratch/alistair/software/tock/libtock-c/newlib/rv32/rv32imac/libc.a");
-    println!("cargo:rustc-link-arg=/scratch/alistair/software/tock/libtock-c/newlib/rv32/rv32imac/libm.a");
-    println!("cargo:rustc-link-arg=/scratch/alistair/software/tock/libtock-c/libtock/build/rv32imac/libtock.a");
+    println!("cargo:rustc-link-arg=/home/twilfred/wdc/libtock-c/newlib/cortex-m/v7e-m/libc.a");
+    println!("cargo:rustc-link-arg=/home/twilfred/wdc/libtock-c/newlib/cortex-m/v7e-m/libm.a");
+    println!("cargo:rustc-link-arg=/home/twilfred/wdc/libtock-c/libtock/build/cortex-m4/libtock.a");
 
-    println!("cargo:rustc-link-search=/scratch/alistair/software/tier4/SPDM-Utils/third-party/libspdm/build/lib/");
+    println!(
+        "cargo:rustc-link-search=/home/twilfred/wdc/spdm-utils/third-party/libspdm/build/lib/"
+    );
 }

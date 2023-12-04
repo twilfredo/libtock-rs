@@ -59,7 +59,7 @@ pub fn convert_elf(cli: &Cli, platform: &str) -> OutFiles {
         }
     }
 
-    let mut command = Command::new("elf2tab");
+    let mut command = Command::new("/home/twilfred/wdc/elf2tab/target/debug/elf2tab");
     #[rustfmt::skip]
     command.args([
         // TODO: libtock-rs' crates are designed for Tock 2.1's Allow interface,

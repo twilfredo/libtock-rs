@@ -35,8 +35,8 @@ libtock_runtime = { path = "runtime" }
 libtock_sound_pressure = {path = "apis/sound_pressure"}
 libtock_temperature = { path = "apis/temperature" }
 libmctp = { path = "tools/libmctp" }
-
-emballoc = { version = "0.2", features = ["portable_atomic"] }
+embedded-alloc = "0.5.1"
+cortex-m = { version = "0.7.6", features = ["critical-section-single-core"]}
 
 SPDM-Utils = { git = "https://github.com/westerndigitalcorporation/spdm-utils.git", default-features = false, features = ["no_std"] }
 
