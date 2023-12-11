@@ -116,6 +116,10 @@ SECTIONS {
         *(.rodata.*)
     } > FLASH
 
+    ..data.rel.ro.local ALIGN(4) : {
+        *(.data.rel.ro.local.*)
+    } > FLASH
+
     /* Sections located in RAM at runtime.
      */
 
